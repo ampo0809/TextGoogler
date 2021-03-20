@@ -19,7 +19,24 @@ class SFSafariViewController: UIViewController {
         
         loadWebView(with: destinationUrl!)
         print(destinationUrl!)
+        
+       
+
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(false)
+//        
+//        let safariViewController = SFSafariViewController(URL: url)
+//        presentViewController(safariViewController, animated: true) {
+//            var frame = safariViewController.view.frame
+//            let OffsetY: CGFloat  = 64
+//            frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y - OffsetY) b
+//            frame.size = CGSize(width: frame.width, height: frame.height + OffsetY)
+//            safariViewController.view.frame = frame
+//        }
+//    }
+    
 }
 
 //MARK: - Trigger WebView
