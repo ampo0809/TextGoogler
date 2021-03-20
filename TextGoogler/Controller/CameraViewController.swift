@@ -52,7 +52,7 @@ class CameraViewController: UIViewController {
             }
             self.googleFoundText()
         }
-        // specify the recognition level
+        // Specify the recognition level
         textRecognitionRequest.recognitionLevel = .accurate
         textRecognitionRequest.minimumTextHeight = 0.05
         textRecognitionRequest.recognitionLanguages = K.langArray
@@ -94,16 +94,6 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
-    
-    //MARK: - Temporal IBActions
-    
-//    @IBAction func cameraViewButtonPressed(_ sender: UIButton) {   // TEMP
-//        present(imagePicker, animated: false, completion: nil)
-//    }
-//    
-//    @IBAction func webViewButtonPressed(_ sender: UIButton) {   // TEMP
-//        performSegue(withIdentifier: K.goToBrowser, sender: self)
-//    }
 }
 
 
