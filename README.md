@@ -1,5 +1,5 @@
 # TextGoogler
-Too lazy to type? Take a picture google the text in it.
+Too lazy to type? Take a picture and google the text inside it.
 
 Project mainly based on `VNRecognizeTextRequest` Apple's native OCR tool.
 
