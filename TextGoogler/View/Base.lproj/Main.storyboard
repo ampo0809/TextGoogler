@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,52 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CameraViewController-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" userLabel="CameraViewController" customClass="CameraViewController" customModule="TextGoogler" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeK-Qw-Up5">
-                                <rect key="frame" x="78" y="165" width="257" height="270"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                <state key="normal" title="Camera"/>
-                                <connections>
-                                    <action selector="cameraViewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bOo-8E-M57"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZX-23-jUF">
-                                <rect key="frame" x="78" y="399" width="257" height="270"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                <state key="normal" title="WebView"/>
-                                <connections>
-                                    <action selector="webViewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jry-zC-wTt"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aZX-23-jUF" secondAttribute="bottom" constant="193" id="AGm-Yt-Udo"/>
-                            <constraint firstItem="aZX-23-jUF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="LtC-hd-HnG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aZX-23-jUF" secondAttribute="trailing" constant="79" id="VnB-pz-fnX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HeK-Qw-Up5" secondAttribute="trailing" constant="79" id="WaG-MX-2TI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HeK-Qw-Up5" secondAttribute="bottom" constant="427" id="hkd-mI-QJT"/>
-                            <constraint firstItem="aZX-23-jUF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="355" id="i3A-qL-gg2"/>
-                            <constraint firstItem="HeK-Qw-Up5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="oAr-g1-XWz"/>
-                            <constraint firstItem="HeK-Qw-Up5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="121" id="wsb-MH-wPe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="erv-z6-YPT"/>
-                    <connections>
-                        <segue destination="cSA-U2-QXF" kind="presentation" identifier="goToBrowser" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="kc2-DA-lBL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="107.8125"/>
-        </scene>
         <!--SFSafariViewController-->
         <scene sceneID="c4M-1b-7Pp">
             <objects>
