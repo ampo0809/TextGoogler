@@ -1,5 +1,5 @@
 //
-//  LangArray.swift
+//  K.swift
 //  TextGoogler
 //
 //  Created by Nacho Ampuero on 08.06.20.
@@ -10,7 +10,6 @@ import Foundation
 
 struct K {
     static let langArray = [
-//        safeLang,
         "en",
 //        "zh",
 //        "jp",

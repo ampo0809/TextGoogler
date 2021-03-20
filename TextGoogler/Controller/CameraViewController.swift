@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CameraViewController.swift
 //  TextGoogler
 //
 //  Created by Nacho Ampuero on 05.06.20.

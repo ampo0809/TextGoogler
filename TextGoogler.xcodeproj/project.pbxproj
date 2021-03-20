@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CA0E55DB248EA0210072D980 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E55DA248EA0210072D980 /* K.swift */; };
-		CA96A794248B163D001B8868 /* DocumentCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA96A793248B163D001B8868 /* DocumentCameraViewController.swift */; };
 		CAA2D5EF249172D70044A406 /* SFSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA2D5EE249172D70044A406 /* SFSafariViewController.swift */; };
 		CAFECCE4248A86B500D6BC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFECCE3248A86B500D6BC56 /* AppDelegate.swift */; };
 		CAFECCE6248A86B500D6BC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFECCE5248A86B500D6BC56 /* SceneDelegate.swift */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		CA0E55DA248EA0210072D980 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
-		CA96A793248B163D001B8868 /* DocumentCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCameraViewController.swift; sourceTree = "<group>"; };
 		CAA2D5EE249172D70044A406 /* SFSafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSafariViewController.swift; sourceTree = "<group>"; };
 		CAFECCE0248A86B500D6BC56 /* TextGoogler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextGoogler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFECCE3248A86B500D6BC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 		CA29C08824917D5D008E7D21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CA96A793248B163D001B8868 /* DocumentCameraViewController.swift */,
 				CA0E55DA248EA0210072D980 /* K.swift */,
 			);
 			path = Model;
@@ -173,7 +170,6 @@
 			files = (
 				CAFECCE8248A86B500D6BC56 /* CameraViewController.swift in Sources */,
 				CA0E55DB248EA0210072D980 /* K.swift in Sources */,
-				CA96A794248B163D001B8868 /* DocumentCameraViewController.swift in Sources */,
 				CAFECCE4248A86B500D6BC56 /* AppDelegate.swift in Sources */,
 				CAFECCE6248A86B500D6BC56 /* SceneDelegate.swift in Sources */,
 				CAA2D5EF249172D70044A406 /* SFSafariViewController.swift in Sources */,
