@@ -135,3 +135,9 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
 }
 
 
+/*
+ POSSIBLE IMPROVEMENTS:
+ - Buid a custom wrapper over the UIImagePickerController
+    - And get rid of the cancel button
+ - Clean up `resultingText` beffore triggering the search
+ */
