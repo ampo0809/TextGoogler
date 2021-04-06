@@ -10,30 +10,51 @@ import UIKit
 import Vision
 import VisionKit
 
+// MARK: - Cammera Methods
 
 class CameraViewController: UIViewController {
     
+    let supportedLanguages = ["en", "de", "fr", "it", "es", "pt"]
     var request = [VNRequest]()
-    var resultingText = K.empty
     let imagePicker = UIImagePickerController()
-    private var url: URL?
-    
+    var resultingText = String()
+
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        
         if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerController.CameraDevice.rear) {
             DispatchQueue.main.async{
                 self.present(self.imagePicker, animated: false, completion: nil)
-            }
-        }
+            }}
+        
+        resultingText = String()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupVision()
+        checkSupportedLang()
+        
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: nil, action: nil)
+    }
+    
+    func checkSupportedLang() {
+        
+        // `supportedLanguages` Languages supported by Vision, if iPhone in e.g: Croatian, it defaults to English
+        if let preferredLang = Locale.preferredLanguages.first {
+            let preferredLangIso2Characters = preferredLang.dropLast(3)
+            let safeLang = String(preferredLangIso2Characters)
+    
+        if !supportedLanguages.contains(safeLang) {
+            alertController(alertTitle: "🧐",
+                            message: "Sorry, your iPhone language (\(safeLang.uppercased())) is currently not available. You can still search for texts in English.",
+                            actionTitle: "OK")
+        }}
     }
     
     private func setupVision() {
@@ -42,41 +63,59 @@ class CameraViewController: UIViewController {
                 print("The observations are of an unexpected type.")
                 return
             }
+            
             // Concatenate the recognised text from all the observations.
             let maximumCandidates = 1
             for observation in observations {
                 
                 guard let candidate = observation.topCandidates(maximumCandidates).first else { continue }
-                //                Build a BOUNDINGBOX somewhere around here... Somewhat later.
+                // Build a BOUNDINGBOX somewhere around here... Somewhat later.
                 self.resultingText += candidate.string
             }
+            
             self.googleFoundText()
         }
+        
         // Specify the recognition level
         textRecognitionRequest.recognitionLevel = .accurate
         textRecognitionRequest.minimumTextHeight = 0.05
-        textRecognitionRequest.recognitionLanguages = K.langArray
+        textRecognitionRequest.recognitionLanguages = supportedLanguages
         self.request = [textRecognitionRequest]
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! SFSafariViewController
-        destinationVC.destinationUrl = url
+    func googleFoundText() {
+        
+        if resultingText == "" {
+            
+            DispatchQueue.main.async {
+                self.alertController(alertTitle: "😅",
+                                message: "Sorry, apparently we found no text in the pictrue, please try again!",
+                                actionTitle: "Sure")
+            }
+            
+        } else {
+            let urlForSearch = "https://www.google.com/search?q=\(resultingText)"
+            if let urlString = urlForSearch.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            if let vc = self.storyboard?.instantiateViewController(identifier: "WebView") as? WebViewController {
+                vc.urlFromPicture = URL(string: urlString)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }}}
     }
     
-    func googleFoundText() {
-        let urlToGoogle = "https://www.google.com/search?q=\(resultingText)"
-        let urlString = urlToGoogle.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        url = URL(string: urlString!)
-        DispatchQueue.main.async{
-            self.performSegue(withIdentifier: K.goToBrowser, sender: nil)
-        }
+    func alertController(alertTitle: String, message: String, actionTitle: String) {
+        
+        let ac = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
+        let submitAction = (UIAlertAction(title: actionTitle, style: .default, handler: { [weak self] _ in
+            self?.navigationController?.loadView()
+        }))
+        
+        ac.addAction(submitAction)
+        self.present(ac, animated: true)
     }
 }
 
 
-//MARK: - ImagePickerController
+//MARK: - ImagePicker Methods
 
 extension CameraViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -89,9 +128,8 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
                     try requestHandler.perform(self.request)
                 } catch {
                     print (error)
-                }
-            }
-        }
+                } } }
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
 }
