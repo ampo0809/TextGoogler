@@ -13,7 +13,7 @@
 		CAFECCEB248A86B500D6BC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFECCE9248A86B500D6BC56 /* Main.storyboard */; };
 		CAFECCED248A86BC00D6BC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAFECCEC248A86BC00D6BC56 /* Assets.xcassets */; };
 		CAFECCF0248A86BC00D6BC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFECCEE248A86BC00D6BC56 /* LaunchScreen.storyboard */; };
-		FDC47039261CC4D50010AA2E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC47038261CC4D50010AA2E /* WebViewController.swift */; };
+		FDDA1819261CF5C500E46494 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA1818261CF5C500E46494 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		CAFECCEC248A86BC00D6BC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAFECCEF248A86BC00D6BC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAFECCF1248A86BC00D6BC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FDC47038261CC4D50010AA2E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = TextGoogler/View/WebViewController.swift; sourceTree = SOURCE_ROOT; };
+		FDDA1818261CF5C500E46494 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFECCE7248A86B500D6BC56 /* CameraViewController.swift */,
-				FDC47038261CC4D50010AA2E /* WebViewController.swift */,
+				FDDA1818261CF5C500E46494 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,8 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAFECCE8248A86B500D6BC56 /* CameraViewController.swift in Sources */,
-				FDC47039261CC4D50010AA2E /* WebViewController.swift in Sources */,
 				CAFECCE4248A86B500D6BC56 /* AppDelegate.swift in Sources */,
+				FDDA1819261CF5C500E46494 /* WebViewController.swift in Sources */,
 				CAFECCE6248A86B500D6BC56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
